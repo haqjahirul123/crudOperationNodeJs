@@ -3,7 +3,7 @@ const router = express.Router();
 
 const boatsModel = require('../schema/boatModel');
 const Response = require('../server');
-const upload= require('../middleware/uploadFile')
+// const upload= require('../middleware/uploadFile')
 
 router.get('/', function(req, res, next) {
     res.render('index');
@@ -29,7 +29,7 @@ router.post('/add-boats-api', function(req, res, next) {
         boat_price: req.body.boat_price,
         boat_sail: req.body.boat_sail,
         boat_motor: req.body.boat_motor,
-        boat_image: req.body.boat_image
+        // boat_image: req.body.boat_image
     }
 
   
@@ -108,8 +108,8 @@ router.get('/add', function(req, res, next) {
 });
 
 
-/* POST Data. */
-router.post('/add', upload.single('boat_image'),function(req, res, next) {
+/* POST Data. //, upload.single('boat_image')*/
+router.post('/add',function(req, res, next) {
     console.log(req.body);
 
     const mybodydata = {
@@ -118,13 +118,13 @@ router.post('/add', upload.single('boat_image'),function(req, res, next) {
         boat_price: req.body.boat_price,
         boat_sail: req.body.boat_sail,
         boat_motor: req.body.boat_motor,
-        boat_image: req.body.boat_image
+        // boat_image: req.body.boat_image
     }
 
-    if(req.file){
-        mybodydata.boat_image=req.file.path
-    }
-    const data = boatsModel(mybodydata);
+    // if(req.file){
+    //     mybodydata.boat_image=req.file.path
+    // }
+    // const data = boatsModel(mybodydata);
     //const data = boatsModel(req.body);
     data.save(function(err) {
         if (err) {

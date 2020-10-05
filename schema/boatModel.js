@@ -13,7 +13,7 @@ boat_manufractureYear :String,
 boat_price :String,
 boat_sail :String,
 boat_motor :String,
-boat_image :String
+// boat_image :String
 });
 
 module.exports = mongoose.model('users', myboat);
