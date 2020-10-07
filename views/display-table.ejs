@@ -29,7 +29,7 @@
                 <th>Price</th>
                  <th>SailBoat</th>
                  <th>MotorBoat</th>
-                 <!-- <th>Image</th> -->
+                 <th>Image</th>
                  
         </tr>
         <% for(var i=0; i<boats.length;i++) { %>
@@ -40,7 +40,7 @@
                   <td><%= boats[i].boat_price %></td>
                   <td><%= boats[i].boat_sail %></td>
                   <td><%= boats[i].boat_motor %></td>
-                  <!-- <td><img src="<%= boats[i].boat_image %>"  style="background-color: #eee; height: 100px;width: 100px;;"></td> -->
+                  <td><img src="<%= boats[i].boat_image %>"  style="background-color: #eee; height: 100px;width: 100px;;"></td>
                   <td>
                           <a class="btn btn-primary mt-3" href='/edit/<%= boats[i]._id %>'>Edit</a> | 
                           <a class="btn btn-danger mt-3" href='/delete/<%= boats[i]._id %>'>Delete</a> |
